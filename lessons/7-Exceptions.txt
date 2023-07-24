@@ -1,0 +1,20 @@
+An exception is an event, which occurs during the execution of a program, 
+that disrupts the normal flow of the program's instructions. When an error 
+occurs within a method, the method creates an exception object and hands it 
+off to the runtime system.
+
+In Java, exceptions are handled in a structured way using an ordered system of exception 
+classes. These are divided into two major categories:
+
+    Checked exceptions: These are exceptions that your code can anticipate and recover from.
+    They are subclasses of Exception and the compiler requires that they be caught or
+    declared in the method's throws clause. Examples include IOException,
+    ClassNotFoundException, etc.
+
+    Unchecked exceptions: These are exceptions that your code typically cannot anticipate or 
+    recover from. They are subclasses of RuntimeException, and the compiler does not require 
+    that they be caught or declared in the method's throws clause. Examples include 
+    ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc.
+
+    Proper handling of exceptions is crucial for building robust applications that can 
+    gracefully handle unexpected situations during runtime.

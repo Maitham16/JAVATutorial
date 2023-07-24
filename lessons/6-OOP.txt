@@ -1,0 +1,110 @@
+Object-Oriented Programming (OOP)
+
+OOP is a programming paradigm centered around objects rather than procedures. 
+Objects are instances of classes, which are essentially user-defined data types. 
+The main concepts in OOP are:
+
+    Classes: A class is a blueprint for creating objects. It contains variables for storing 
+                data and methods to perform actions.
+
+                        public class Dog {
+                            String breed;
+                            int age;
+                            String color;
+
+                            void barking() {
+                                //...
+                            }
+
+                            void hungry() {
+                                //...
+                            }
+
+                            void sleeping() {
+                                //...
+                            }
+                        }
+
+            In this example, Dog is a class that contains three variables (breed, age, color) and 
+            three methods (barking, hungry, sleeping).
+
+    Objects: An object is an instance of a class. You can create an object from a class in 
+    Java using the new keyword.
+
+            Dog myDog = new Dog();
+
+            Here, myDog is an object of the Dog class.
+
+    Inheritance: Inheritance is a mechanism in which one class acquires the properties (fields and methods) 
+                    of another class. The class which inherits the properties of other is known as subclass 
+                    (or derived class, child class), and the class whose properties are inherited is known as 
+                    superclass (or base class, parent class).
+
+                    public class Animal {
+                        public void eat() {
+                            System.out.println("This animal eats food");
+                        }
+                    }
+
+                    public class Dog extends Animal {
+                        // Dog class inherits eat() method from Animal class
+                    }
+
+                Here, Dog is the subclass of the Animal superclass.
+
+    Encapsulation: Encapsulation is the technique of making the fields in a class private and providing access 
+                    to the fields via public methods. It increases security as it prevents outsiders from accessing 
+                    the fields directly.
+
+                    public class Dog {
+                        private String breed;
+
+                        public String getBreed() {
+                            return breed;
+                        }
+
+                        public void setBreed(String breed) {
+                            this.breed = breed;
+                        }
+                    }
+
+                Here, breed is a private field, and we use the public methods getBreed and setBreed to access it.
+
+    Polymorphism: Polymorphism allows us to perform a single action in different ways. In Java, we use method 
+                    overloading and method overriding to achieve polymorphism.
+
+                    public class Animal {
+                        public void sound() {
+                            System.out.println("The animal makes a sound");
+                        }
+                    }
+
+                    public class Dog extends Animal {
+                        @Override
+                        public void sound() {
+                            System.out.println("The dog barks");
+                        }
+                    }
+
+                 Here, the Dog class overrides the sound method of the Animal class.
+
+    Abstraction: Abstraction is the quality of dealing with ideas rather than events. It hides the complex details 
+                    and shows the essential features. In Java, we use abstract classes and interfaces to achieve 
+                    abstraction.
+
+                    public abstract class Animal {
+                        public abstract void sound();
+                    }
+
+                    public class Dog extends Animal {
+                        public void sound() {
+                            System.out.println("The dog barks");
+                        }
+                    }
+
+                Here, Animal is an abstract class with an abstract method sound. The Dog class extends Animal 
+                    and provides an implementation for the sound method.
+
+These are the basic principles of object-oriented programming in Java. They form the foundation of Java programming 
+    and are used extensively in all Java applications.
+
