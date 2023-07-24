@@ -1,0 +1,69 @@
+Data Structures: Data structures are a way of organizing and storing data so that they can be accessed and worked with efficiently. They define the relationship between 
+                    the data, and the operations that can be performed on the data. Some of 
+                    the basic data structures that you'll often use in Java include:
+
+    Arrays: An array is a data structure that stores a fixed-size sequential collection of 
+               elements of the same type.
+    ArrayList: ArrayList in Java is a data structure that can be stretched to accommodate 
+                additional elements within itself and shrink back to a smaller size when 
+                elements are removed. It is a very useful tool as it can dynamically resize 
+                itself automatically when needed.
+    LinkedList: LinkedList is a linear data structure. Unlike ArrayList, the elements in the 
+                LinkedList are not stored in contiguous locations. Instead, they are linked 
+                using pointers.
+    Stack: Stack is a subclass of Vector that implements a standard last-in, first-out (LIFO) 
+            stack.
+    Queue: A collection designed for holding elements prior to processing. Queues typically 
+            order elements in a FIFO (first-in, first-out) manner.
+    HashSet: A Set is a Collection that cannot contain duplicate elements. HashSet allows 
+            null value. It has the best performance for the operations like add, remove, 
+            contains, size, etc.
+    HashMap: The HashMap class uses a hashtable to implement the Map interface. It allows 
+                the null value and the null key.
+
+File I/O (Input/Output): Java provides strong, flexible support for I/O related to files 
+                            and networks. It provides a rich system for handling file I/O 
+                            via the java.io package.
+
+Here is a simple example of file writing in Java:
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+    public static void main(String[] args) {
+        try {
+            FileWriter myWriter = new FileWriter("filename.txt");
+            myWriter.write("Files in Java are fun!");
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
+
+
+And a simple example of file reading:
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ReadFromFile {
+    public static void main(String[] args) {
+        try {
+            File myFile = new File("filename.txt");
+            Scanner myReader = new Scanner(myFile);
+            while (myReader.hasNextLine()) {
+                String line = myReader.nextLine();
+                System.out.println(line);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}

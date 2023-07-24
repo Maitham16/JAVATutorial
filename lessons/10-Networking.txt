@@ -1,0 +1,20 @@
+Networking in Java
+Java provides a strong support for networking programming. Networking in Java is mainly 
+based on the concept of sockets and ports. Here are some key concepts:
+
+Socket Programming: In networking, a socket is one endpoint of a two-way communication link 
+                    between two programs running on the network. An endpoint is a combination 
+                    of an IP address and a port number. In Java, you can use the Socket class 
+                    from the java.net package to create a socket.
+
+ServerSocket: A server socket waits for requests to come in over the network. It performs some 
+              operation based on that request, and then possibly returns a result to the requester. 
+              The actual work of the server socket is performed by an instance of the SocketImpl class.
+
+URLs and URIs: A Uniform Resource Locator (URL) is a reference to a web resource that specifies its location 
+                on a computer network and a mechanism for retrieving it. A Uniform Resource Identifier (URI) 
+                is a string of characters that unambiguously identifies a particular resource. The java.net 
+                package provides the URL and URI classes for working with URLs and URIs.
+
+Java networking is a broad and complex topic, encompassing everything from low-level socket programming to 
+high-level protocols like HTTP and FTP, plus much more.

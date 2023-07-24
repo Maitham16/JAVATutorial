@@ -1,0 +1,165 @@
+Generics:
+are a significant feature of Java that were introduced in Java 5. They provide stronger type 
+checks at compile time and eliminate the risk of ClassCastException that was common while 
+working with collections.
+
+For example, consider a simple non-generic Box class:
+
+    public class Box {
+        private Object object;
+
+        public void set(Object object) { this.object = object; }
+        public Object get() { return object; }
+    }
+
+You can store any type of object in the box, but when you retrieve it, you need to 
+typecast it to your desired type, and there is a risk of ClassCastException if your 
+typecasting is incorrect.
+
+Generics improve this scenario by providing a way for you to communicate the type of a 
+collection to the compiler, so it can be checked. Once the compiler knows the element type 
+of the collection, the compiler can check that you have used the collection consistently and 
+can insert the correct casts on values being taken out of the collection.
+
+Here is how you can rewrite the above Box class with generics:
+
+    public class Box<T> {
+        private T t;
+
+        public void set(T t) { this.t = t; }
+        public T get() { return t; }
+    }
+
+In the generic class Box, T stands for "Type". It's a placeholder for the actual type that 
+will be used to create an instance of Box.
+
+When you go to use this with specific types, it looks like this:
+
+    Box<Integer> integerBox = new Box<Integer>();
+    Box<String> stringBox = new Box<String>();
+
+    integerBox.set(new Integer(10));
+    stringBox.set(new String("Hello World"));
+
+    System.out.printf("Integer Value :%d\n\n", integerBox.get());
+    System.out.printf("String Value :%s\n", stringBox.get());
+
+When the compiler sees the code above, it translates it to:
+
+    Box integerBox = new Box();
+    Box stringBox = new Box();
+
+    integerBox.set(new Integer(10));
+    stringBox.set(new String("Hello World"));
+
+    System.out.printf("Integer Value :%d\n\n", (Integer)integerBox.get());
+    System.out.printf("String Value :%s\n", (String)stringBox.get());
+
+Here, <Integer> signifies that this Box will be used for Integers. We can now add Integers 
+into Box and retrieve them without casting, and with confidence that a type error will not 
+occur.
+
+Note: From Java 7, the type specification can be left out when creating objects (in our case, new Box<>()). 
+This is called the Diamond Operator, and Java will infer the type arguments automatically.
+
+This is a basic introduction to generics, it has more advanced topics like Wildcards, 
+Bounded Type Parameters and Generic Methods which you can explore further below:
+
+Bounded Type Parameters: Bounded type parameters are used to limit the kinds of types that are allowed to be 
+passed to a type parameter. For example, to specify that only Number or its subclasses can be used as type argument 
+to a generic class, you can define it as below:
+
+    public class Box<T extends Number> {
+        private T t;
+
+        public void set(T t) { this.t = t; }
+        public T get() { return t; }
+    }
+
+In the above declaration, extends is used in a general sense to mean either "extends" (as in classes) or "implements" 
+(as in interfaces).
+
+The most common type parameter names are:
+
+    E - Element (used extensively by the Java Collections Framework)
+    K - Key
+    N - Number
+    T - Type
+    V - Value
+    S,U,V etc. - 2nd, 3rd, 4th types
+
+You can use multiple bounds on a type parameter, for example:
+
+    <T extends B1 & B2 & B3>
+
+If bound A is a class, then bound B can be an interface. In this case, the class bound should be specified first.
+    
+        <T extends A & B>
+
+Note: A class can only extend one other class, whether or not it also implements multiple interfaces.
+
+Wildcards: Wildcards are used as type arguments where only variances on the base type are needed.
+
+The question mark (?), represents the wildcard, stands for unknown type in generics. There are two types of wildcards:
+    
+-Upper Bounded Wildcards: These are bounded by a specific class (or interface), and represent a range of classes 
+ that are subclasses of this bound. You declare an upper bounded wildcard by using the `extends` keyword.
+
+    For example, the following method accepts a List of objects that are of type Integer or subclasses of Integer:
+
+        public static void process(List<? extends Integer> list) {
+            // process the list
+        }
+
+    The process method can now be called with any type of List that is of type Integer or a subclass of Integer, 
+    for example List<Integer>, List<Number>, List<Long>, List<Double> etc.
+
+    Note: You can only read from a collection using an upper bounded wildcard.
+
+-Lower Bounded Wildcards: These are bounded by a specific class (or interface), and represent a range of classes
+ that are superclasses of this bound. You declare a lower bounded wildcard by using the `super` keyword.
+    
+    For example, the following method accepts a List of objects that are of type Integer or the super class of Integer:
+    
+        public static void process(List<? super Integer> list) {
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i));
+            }
+        }
+
+    The process method can now be called with any type of List that is of type Integer or a super class of Integer, 
+    for example List<Integer>, List<Number>, List<Object> etc.
+
+    Note: You can only add to a collection using a lower bounded wildcard.
+
+Generic Methods: Just like type declarations, methods can also be generic—that is, parameterized by one 
+                    or more type parameters.
+    
+    For example, the following generic method returns the minimum of three objects, using the compareTo method
+
+        public static <T extends Comparable<T>> T minimum(T x, T y, T z) {
+            T min = x;   // assume x is initially the smallest
+
+            if (y.compareTo(min) < 0) {
+                min = y;   // y is the smallest so far
+            }
+
+            if (z.compareTo(min) < 0) {
+                min = z;   // z is the smallest now                 
+            }
+            return min;   // returns the smallest object   
+        }
+
+    Another general example:
+
+        public class Util {
+            // Generic static method
+            public static <K, V> boolean compare(Pair<K, V> p1, Pair<K, V> p2) {
+                return p1.getKey().equals(p2.getKey()) && p1.getValue().equals(p2.getValue());
+            }
+        }
+
+In this example, the Util class contains a single static method that has two type parameters, K and V, represented 
+before the return type of the method.
+
+These concepts give you a lot of power and flexibility when dealing with code that operates on objects of varying types.

@@ -1,0 +1,38 @@
+Java Collections Framework.
+
+The Java Collections Framework provides a well-designed set of interfaces and classes that support operations on a 
+collections of objects. These data structures are foundational elements of programming, and you'll find them enormously
+helpful for organizing and processing data in your applications.
+
+At a high level, the framework consists of:
+
+    Interfaces: These are abstract data types representing collections. Examples include the Collection, List, Set, Queue,
+    Deque, and Map interfaces.
+
+    Implementations: These are the concrete implementations of the collection interfaces. In essence, they are reusable 
+    data structures. Examples include classes like ArrayList, HashSet, LinkedList, HashMap, PriorityQueue, and TreeMap.
+
+    Algorithms: These are methods that perform useful computations, such as searching and sorting, on objects that 
+    implement collection interfaces.
+
+Here's an overview of some key interfaces and classes:
+
+    List Interface (and ArrayList class): A list is an ordered collection (also known as a sequence). The user of this 
+    interface has precise control over where in the list each element is inserted. ArrayList is a resizable-array 
+    implementation of the List interface.
+
+    Set Interface (and HashSet class): A collection that contains no duplicate elements. More formally, sets contain 
+    no pair of elements e1 and e2 such that e1.equals(e2), and at most one null element.
+
+    Map Interface (and HashMap class): A Map is an object that maps keys to values. A map cannot contain duplicate keys; 
+    each key can map to at most one value.
+
+    Queue Interface (and PriorityQueue class): A collection designed for holding elements prior to processing. Queues 
+    typically, but do not necessarily, order elements in a FIFO (first-in, first-out) manner.
+
+    Deque Interface (and ArrayDeque class): Deques, short for double ended queues, are a type of queue in which we can 
+    insert and remove elements from both ends.
+
+The Collections Framework also includes functionality for algorithms (like sorting and searching), arrays 
+(which are, in fact, fixed-size lists), and "wrapper" classes (which can provide synchronicity and immutability,
+among other things).
