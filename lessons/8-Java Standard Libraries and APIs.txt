@@ -1,0 +1,25 @@
+Java Standard Libraries and APIs:
+The Java standard libraries are a set of dynamically loadable libraries that Java applications can call at runtime. 
+The libraries provide useful functionality for common programming tasks, and they are a major reason why Java is such a 
+powerful language.
+
+The Java standard libraries are part of the Java API (Application Programming Interface). The Java API is a collection 
+of prewritten classes, which are free to be used in your programs. They are grouped into libraries of classes and 
+interfaces; these libraries are known as packages.
+
+Here are a few packages from the standard libraries that you will likely use frequently:
+
+    java.lang: This package is automatically imported into every Java program. It includes classes that are fundamental 
+                to the design of the Java programming language, such as Object, String, StringBuilder, Math, and the 
+                wrapper classes for the primitive types (Integer, Character, etc.).
+
+    java.io: This package contains classes for system input and output through data streams, serialization, 
+                and the file system.
+
+    java.util: This package contains the collections framework; legacy collection classes, event model, date and time 
+                facilities, internationalization, and miscellaneous utility classes like Arrays and Objects.
+
+    java.net: This package contains classes for network support, including URL, URLConnection, Socket, and ServerSocket.
+
+    java.sql: This package provides the API for accessing and processing data stored in a data source, usually a 
+                relational database, using the Java programming language.

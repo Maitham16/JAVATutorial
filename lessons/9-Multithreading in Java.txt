@@ -1,0 +1,35 @@
+Multithreading is a feature in Java that allows you to write programs that do multiple 
+things concurrently (at the same time). A thread is a lightweight, smallest part of a 
+process that can run concurrently with other parts (threads) of the same process.
+
+Java provides built-in support for multithreaded programming. It's important to 
+understand the concepts of multithreading as they can be very useful in improving 
+the efficiency of programs that need to perform several tasks at once.
+
+Here are some key concepts related to multithreading in Java:
+Creating a Thread: You can create a new thread by either extending the Thread class 
+                    or implementing the Runnable interface.
+
+Thread Lifecycle: A thread goes through various stages in its lifecycle, such as New, 
+                    Runnable, Running, Blocked, and Terminated.
+
+Thread Priority: Each thread has a priority which helps the operating system determine 
+                    the order in which threads are scheduled for running. In Java, you can 
+                    set the priority of a thread using the setPriority(int) method.
+
+Synchronization: Synchronization is used to control access to shared resources by multiple 
+                    threads. This is done using the synchronized keyword.
+
+Inter-thread Communication: Java allows communication between two or more threads. This is 
+                                done using methods like wait(), notify(), and notifyAll().
+
+Deadlock: Deadlock can occur in a situation when a thread is waiting for an object lock 
+            that is held by another thread, and this second thread is waiting for an object 
+            lock held by the first thread. Both threads are waiting for each other to 
+            release the lock, and as a result, they both keep waiting forever. 
+            The situation is essentially a standstill.
+
+Understanding and correctly implementing multithreading can be a bit challenging but it's a 
+very powerful concept that can drastically improve the performance of your Java application, 
+especially for tasks that are CPU-intensive or that need to handle multiple I/O operations 
+simultaneously.
