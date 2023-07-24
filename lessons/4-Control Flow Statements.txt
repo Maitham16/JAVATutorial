@@ -1,0 +1,13 @@
+There are three types of control flow statements in Java:
+
+    Decision Making Statements (if-then, if-then-else, switch): These statements allow your 
+    program to choose different paths of execution based on an expression or the state of a 
+    variable.
+
+    Looping Statements (for, while, do-while): These statements allow a block of code to be 
+    executed repeatedly based on a condition.
+
+    Branching Statements (break, continue, return): These statements are used to alter the 
+    normal flow of execution.
+
+    

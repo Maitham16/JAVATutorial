@@ -1,0 +1,15 @@
+An array in Java is a fixed-size, sequential collection of elements of the same data type. 
+It can store primitives (int, char, etc.) as well as references (or addresses) of objects. 
+An array is used to store a collection of data, but it's more useful to think of it as a 
+collection of variables of the same type.
+
+It's important to note that array indices in Java start from 0 and go to n-1, where n is the 
+size of the array. If you try to access an index that's not within this range, you'll get an 
+ArrayIndexOutOfBoundsException.
+
+Java also provides a for-each loop (also known as an enhanced for loop) that makes it easy to 
+iterate over arrays:
+
+for(int num : arr) {
+    System.out.println(num);
+}

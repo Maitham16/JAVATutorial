@@ -1,0 +1,50 @@
+In Java, operators are special symbols that perform specific operations on one, 
+two, or three operands, and then return a result. Operators are used in Java to 
+manipulate data and variables.
+
+Here are the different types of operators in Java:
+
+    Arithmetic Operators: These are used to perform basic mathematical operations.
+        +: Addition
+        -: Subtraction
+        *: Multiplication
+        /: Division
+        %: Modulus (returns the remainder of a division operation)
+        ++: Increment (increases value by 1)
+        --: Decrement (decreases value by 1)
+
+    Assignment Operators: These are used to assign a value to a variable.
+        =: Simple assignment
+        +=: Add and assignment
+        -=: Subtract and assignment
+        *=: Multiply and assignment
+        /=: Divide and assignment
+        %=: Modulus and assignment
+        &=: Bitwise AND assignment
+        |=: Bitwise OR assignment
+        ^=: Bitwise XOR assignment
+        >>=: Right shift and assignment
+        <<=: Left shift and assignment
+        >>>=: Zero fill right shift and assignment
+
+    Comparison (Relational) Operators: These are used to compare two values.
+        ==: Equal to
+        !=: Not equal to
+        >: Greater than
+        <: Less than
+        >=: Greater than or equal to
+        <=: Less than or equal to
+
+    Logical (Boolean) Operators: These are used to perform logical operations.
+        &&: Logical AND
+        ||: Logical OR
+        !: Logical NOT
+
+    Bitwise Operators: These are used to perform operations on bits.
+        &: Bitwise AND
+        |: Bitwise OR
+        ^: Bitwise XOR (exclusive OR)
+        ~: Bitwise Complement
+        <<: Left Shift
+        >>: Right Shift
+        >>>: Zero Fill Right Shift

@@ -1,0 +1,28 @@
+In Java, every variable has a data type, which tells us what kind of data the variable can 
+hold. There are two categories of data types in Java: primitive data types and reference/
+non-primitive data types.
+
+Primitive data types: These are the most basic data types in Java. They include:
+
+    byte: The byte data type is an 8-bit signed two's complement integer. 
+            It has a minimum value of -128 and a maximum value of 127 (inclusive). 
+            It can be useful for saving memory in large arrays.
+    short: The short data type is a 16-bit signed two's complement integer. 
+            It has a minimum value of -32,768 and a maximum value of 32,767 (inclusive).
+    int: The int data type is a 32-bit signed two's complement integer, which has a minimum 
+            value of -2^31 and a maximum value of 2^31-1.
+    long: The long data type is a 64-bit two's complement integer. Use this data type when 
+            you need a range of values wider than those provided by int.
+    float: The float data type is a single-precision 32-bit IEEE 754 floating point. 
+            Use this data type when you need to save memory in large arrays of floating-point 
+            numbers.
+    double: The double data type is a double-precision 64-bit IEEE 754 floating point. 
+        This data type is generally used for decimal values.
+    boolean: The boolean data type has only two possible values: true and false. 
+        Use this data type for simple flags that track true/false conditions.
+    char: The char data type is a single 16-bit Unicode character.
+
+Reference/Non-primitive data types: These are used to store groups of related data. They 
+include classes, interfaces, and arrays. When you create an object of a class, a reference 
+to that object is a reference data type. For now, you just need to know they exist - we'll 
+delve deeper into these in later lessons.
